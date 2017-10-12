@@ -6,7 +6,7 @@ defmodule Topn.DataSource do
   end
 
   # get really data from adapter which implements Topn.DataGrabber behaviour
-  def get_data(url, from, to) do
+  def get_data(_url, _from, _to) do
     # get data from central database, eg DynamoDB
     []
   end

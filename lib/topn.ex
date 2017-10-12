@@ -13,7 +13,7 @@ defmodule Topn do
   end
 
   defp updateTopnList(item, array) do
-    newArray = case array do
+    newArray = case Enum.reverse(array) do
       x when length(x) < @topNValue -> [item | x]
       [head | tail] when head < item -> [item | tail]
       x -> x
