@@ -1,0 +1,25 @@
+@startuml
+start
+:Prepare a list named <b>Result</b> to store the Top N values;
+:Big Data;
+:Use Stream.transform to read elements;
+note right
+  Use Stream to do lazy computation to save memory;
+end note
+while (Data Available?) is (Yes)
+  :read data to <b>Value</b>;
+	if (Length of <b>Result</b> < N) then (Yes)
+	    :Add <b>Value</b> to <b>Result</b> list;
+            :sort <b>Result</b> list;
+	  else (No)
+	      :get first element from <b>Result</b> list to <b>X</b>;
+	      if (<b>Value</b> > <b>X</b>) then (Yes)
+		    :replace first element of <b>Result</b> to <b>Value</b>;
+		    :sort <b>Result</b> list;
+              else (No)
+		  endif
+	  endif
+end while (No)
+:Return <b>Result</b>;
+end
+@enduml

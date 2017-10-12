@@ -1,0 +1,20 @@
+@startuml
+start
+:Big Data;
+fork
+:Slice 1;
+:Get TopN;
+fork again
+:Slice 2;
+:Get TopN;
+fork again
+:Slice ...;
+:Get TopN;
+fork again
+:Slice N;
+:Get TopN;
+end fork
+:Merge All TopN to List;
+:Get final TopN;
+end
+@enduml
