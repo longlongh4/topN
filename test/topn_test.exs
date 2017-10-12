@@ -3,6 +3,6 @@ defmodule TopnTest do
   doctest Topn
 
   test "greets the world" do
-    assert Topn.hello() == :world
+    Topn.get_topn()
   end
 end
